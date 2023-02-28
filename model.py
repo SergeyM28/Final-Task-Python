@@ -6,9 +6,6 @@ body = None
 date = None
 currentNotes = []
 
-def view_data(data):
-    print(data)
-
 def printNote(i):
     print(f"{currentNotes[i]}\n{currentNotes[i+1]}\n{currentNotes[i+2]}\n{currentNotes[i+3]}\n")
 
@@ -36,6 +33,7 @@ def addNote():
     global date
     
     id = int(findMaxId()) + 1
+    id = str(id)
     print("введите заголовок")
     title = getData()
     print("введите текст заметки")
@@ -85,13 +83,6 @@ def searchId(value):
             temp = i
         i = i + 4
     return temp
-
-def searchByDate(value):
-    i = 3
-    while i < len(currentNotes):
-        if currentNotes[i] == value:
-            print(f"{currentNotes[i-3]}\n{currentNotes[i-2]}\n{currentNotes[i-1]}\n{currentNotes[i]}")
-        i = i + 4
 
 def deleteNoteById(value):
     i = 0
